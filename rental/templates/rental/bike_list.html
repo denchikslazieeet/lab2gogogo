@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список велосипедов - Велопрокат</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Наши велосипеды</h1>
+    </header>
+    <nav>
+        <a href="/">Главная</a>
+        <a href="/about/">О нас</a>
+        <a href="/bikes/">Список велосипедов</a>
+        <a href="/contact/">Контакты</a>
+    </nav>
+    <div class="container">
+        <h2>Список доступных велосипедов</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Модель</th>
+                    <th>Тип</th>
+                    <th>Цена за день (₽)</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for bike in bikes %}
+                <tr>
+                    <td>{{ bike.name }}</td>
+                    <td>{{ bike.type }}</td>
+                    <td>{{ bike.price_per_day }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

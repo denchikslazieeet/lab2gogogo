@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ bike.name }} - Велопрокат</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>{{ bike.name }}</h1>
+    </header>
+    <nav>
+        <a href="/">Главная</a>
+        <a href="/about/">О нас</a>
+        <a href="/bikes/">Список велосипедов</a>
+        <a href="/contact/">Контакты</a>
+    </nav>
+    <div class="container">
+        <h2>Детали велосипеда</h2>
+        <p><strong>Модель:</strong> {{ bike.name }}</p>
+        <p><strong>Тип:</strong> {{ bike.type }}</p>
+        <p><strong>Цена за день:</strong> {{ bike.price_per_day }} ₽</p>
+        <p><strong>Описание:</strong> {{ bike.description }}</p>
+    </div>
+</body>
+</html>
